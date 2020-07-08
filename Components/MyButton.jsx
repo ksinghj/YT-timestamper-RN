@@ -1,11 +1,14 @@
 import React from "react";
 import { StyleSheet, Button } from "react-native";
 
-export const button = ({ text, onPress }) => {
+const MyButton = ({ text, onPress }) => {
   <Button style={styles.btn} onPress={onPress}>
     {text}
+    Something?
   </Button>;
 };
+
+export default MyButton;
 
 const styles = StyleSheet.create({
   btn: {

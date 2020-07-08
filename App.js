@@ -9,8 +9,8 @@ import {
   TextInput,
   Button,
 } from "react-native";
-// import Form from "./Components/Form";
-import { Formik } from "formik";
+import Form from "./Components/Form";
+import MyButton from "./Components/MyButton";
 
 export default function App() {
   return (
@@ -21,22 +21,10 @@ export default function App() {
           source={require("./img/minifyme-logo.png")}
           style={styles.logo}
         />
+        <MyButton onPress="onPress" text="a btn">
+          Button
+        </MyButton>
       </View>
-      <Formik
-        initialValues={{ url: "" }} // Want this as Form component for reuse
-        onSubmit={values => console.log(values)}
-      >
-        {({ handleChange, handleBlur, handleSubmit, values }) => (
-          <View>
-            <TextInput
-              onChangeText={handleChange("url")}
-              onBlur={handleBlur("url")}
-              value={values.url}
-            />
-            <Button onPress={handleSubmit} title="Add" />
-          </View>
-        )}
-      </Formik>
     </SafeAreaView>
   );
 }
