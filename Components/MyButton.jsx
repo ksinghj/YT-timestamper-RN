@@ -1,21 +1,24 @@
-import React from "react";
-import { StyleSheet, Button } from "react-native";
+import React from "react"
+import { StyleSheet, Button, View } from "react-native"
+import colors from "../constants/colors"
 
-const MyButton = ({ text, onPress }) => {
-  <Button style={styles.btn} onPress={onPress}>
-    {text}
-    Something?
-  </Button>;
-};
+const MyButton = ({ style, title, onPress }) => (
+  <View style={{ ...styles.btnContainer, ...style }}>
+    <Button style={styles.btn} color={colors.ytRed} onPress={onPress} title={title} />
+  </View>
+)
 
-export default MyButton;
+export default MyButton
 
 const styles = StyleSheet.create({
-  btn: {
+  btnContainer: {
     color: "white",
-    backgroundColor: "red",
     padding: 30,
     borderRadius: 5,
-    // textAlign: "center"
+    maxWidth: "50%",
+    alignSelf: "center",
   },
-});
+  btn: {
+    color: "red",
+  },
+})
