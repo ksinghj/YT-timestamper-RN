@@ -1,20 +1,33 @@
 import { StatusBar } from "expo-status-bar"
 import React from "react"
-import { StyleSheet, Text, View, Image, SafeAreaView, TextInput, Button } from "react-native"
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  SafeAreaView,
+  Keyboard,
+  TouchableWithoutFeedback,
+} from "react-native"
 import Form from "./Components/Form"
 import MyButton from "./Components/MyButton"
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" />
-      <View style={styles.logoContainer}>
-        <Image source={require("./img/minifyme-logo.png")} style={styles.logo} />
-      </View>
-      <View style={styles.btn}>
-        <MyButton style={{ width: "50%" }} onPress="onPress" title="ADD" />
-      </View>
-    </SafeAreaView>
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <SafeAreaView style={styles.container}>
+        <StatusBar style="auto" />
+        <View style={styles.logoContainer}>
+          <Image source={require("./img/minifyme-logo.png")} style={styles.logo} />
+        </View>
+        <View>
+          <Form />
+        </View>
+        <View style={styles.btn}>
+          <MyButton style={{ width: "50%" }} onPress="onPress" title="ADD" />
+        </View>
+      </SafeAreaView>
+    </TouchableWithoutFeedback>
   )
 }
 
