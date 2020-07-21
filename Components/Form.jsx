@@ -2,14 +2,14 @@
 import React from "react"
 import { StyleSheet, Text, View, TextInput } from "react-native"
 
-export default function Form() {
-  return (
-    <View style={styles.inputContainer}>
-      <Text style={styles.label}>Enter the video URL:</Text>
-      <TextInput style={styles.input} onChangeText={text => text} />
-    </View>
-  )
-}
+const Form = ({ onChangeText }) => (
+  <View style={styles.inputContainer}>
+    <Text style={styles.label}>Enter the video URL:</Text>
+    <TextInput style={styles.input} onChangeText={onChangeText} />
+  </View>
+)
+
+export default Form
 
 const styles = StyleSheet.create({
   input: {

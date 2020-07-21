@@ -2,9 +2,9 @@ import React from "react"
 import { StyleSheet, Button, View } from "react-native"
 import colors from "../constants/colors"
 
-const MyButton = ({ style, title, onPress }) => (
+const MyButton = ({ style, title, confirmUrl }) => (
   <View style={{ ...styles.btnContainer, ...style }}>
-    <Button style={styles.btn} color={colors.ytRed} onPress={onPress} title={title} />
+    <Button style={styles.btn} color={colors.ytRed} onPress={() => confirmUrl} title={title} />
   </View>
 )
 

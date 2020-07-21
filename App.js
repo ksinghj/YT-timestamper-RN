@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar"
-import React from "react"
+import React, { useState } from "react"
 import {
   StyleSheet,
   Text,
@@ -13,6 +13,17 @@ import Form from "./Components/Form"
 import MyButton from "./Components/MyButton"
 
 export default function App() {
+  const [url, setUrl] = useState("")
+  const [urlConfirmed, setUrlConfirmed] = useState("")
+
+  const onChangeText = inputText => {
+    setUrl(inputText)
+  }
+
+  const confirmUrl = () => {
+    setUrlConfirmed(url)
+  }
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView style={styles.container}>
@@ -21,10 +32,11 @@ export default function App() {
           <Image source={require("./img/minifyme-logo.png")} style={styles.logo} />
         </View>
         <View>
-          <Form />
+          <Form onChangeText={onChangeText} />
         </View>
         <View style={styles.btn}>
-          <MyButton style={{ width: "50%" }} onPress="onPress" title="ADD" />
+          <MyButton style={{ width: "50%" }} onPress={confirmUrl} title="ADD" />
+          <Text>{urlConfirmed}</Text>
         </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>
