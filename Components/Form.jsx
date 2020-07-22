@@ -9,6 +9,8 @@ const Form = ({ onChangeTextUrl }) => (
   </View>
 )
 
+// TODO: when input pressed setUrlConfirmed(false) to hide add timestamp screen
+
 export default Form
 
 const styles = StyleSheet.create({

@@ -4,7 +4,12 @@ import colors from "../constants/colors"
 
 const MyButton = ({ style, title, handlePress }) => (
   <View style={{ ...styles.btnContainer, ...style }}>
-    <Button style={styles.btn} color={colors.ytRed} title={title} onPress={handlePress} />
+    <Button
+      style={styles.btn}
+      color={colors.ytRed}
+      title={title}
+      onPress={() => handlePress(true)}
+    />
   </View>
 )
 
