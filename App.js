@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar"
 import React, { useState } from "react"
 import { StyleSheet, Text, View, Keyboard, TouchableWithoutFeedback } from "react-native"
 import EnterUrlScreen from "./Components/EnterUrlScreen"
+import AddTimestampScreen from "./Components/AddTimestampScreen"
 
 export default function App() {
   const [url, setUrl] = useState("")
@@ -34,7 +35,7 @@ export default function App() {
           setUrlConfirmed={setUrlConfirmed}
           url={url}
         />
-        <Text>AddTimestampScreen</Text>
+        <AddTimestampScreen />
       </React.Fragment>
     )
   }

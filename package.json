@@ -14,6 +14,8 @@
     "react-dom": "~16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.1.tar.gz",
     "react-native-elements": "^2.0.4",
+    "react-native-numeric-input": "^1.8.3",
+    "react-native-vector-icons": "^7.0.0",
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {
