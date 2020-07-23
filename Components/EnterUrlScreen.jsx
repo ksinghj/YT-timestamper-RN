@@ -12,7 +12,7 @@ import {
 import Form from "./Form"
 import MyButton from "./MyButton"
 
-const EnterUrlScreen = ({ onChangeTextUrl, confirmUrl, urlConfirmed }) => {
+const EnterUrlScreen = ({ onChangeTextUrl, setUrlConfirmed, url }) => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView style={styles.container}>
@@ -20,12 +20,15 @@ const EnterUrlScreen = ({ onChangeTextUrl, confirmUrl, urlConfirmed }) => {
         <View style={styles.logoContainer}>
           <Image source={require("../img/minifyme-logo.png")} style={styles.logo} />
         </View>
-        <View>
-          <Form onChangeTextUrl={onChangeTextUrl} />
-        </View>
+        <Form onChangeHandler={onChangeTextUrl} />
         <View style={styles.btnContainer}>
-          <Text>{urlConfirmed}</Text>
-          <MyButton style={{ width: "50%" }} handlePress={confirmUrl} title="ADD" />
+          <Text>{url}</Text>
+          <MyButton
+            style={{ width: "50%" }}
+            handlePress={setUrlConfirmed}
+            handlePressParam={true}
+            title="ADD"
+          />
         </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>
