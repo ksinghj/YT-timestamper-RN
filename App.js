@@ -26,7 +26,17 @@ export default function App() {
   )
 
   if (urlConfirmed === true) {
-    content += <Text>AddTimestampScreen</Text>
+    content = (
+      <React.Fragment>
+        <EnterUrlScreen
+          onChangeTextUrl={onChangeTextUrl}
+          confirmUrl={confirmUrl}
+          setUrlConfirmed={setUrlConfirmed}
+          url={url}
+        />
+        <Text>AddTimestampScreen</Text>
+      </React.Fragment>
+    )
   }
 
   return (
