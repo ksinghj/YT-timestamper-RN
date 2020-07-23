@@ -2,10 +2,10 @@
 import React from "react"
 import { StyleSheet, Text, View, TextInput } from "react-native"
 
-const Form = ({ onChangeTextUrl }) => (
+const Form = ({ onChangeHandler }) => (
   <View style={styles.inputContainer}>
     <Text style={styles.label}>Enter the video URL:</Text>
-    <TextInput style={styles.input} onChangeText={text => onChangeTextUrl(text)} />
+    <TextInput style={styles.input} onChangeText={text => onChangeHandler(text)} />
   </View>
 )
 

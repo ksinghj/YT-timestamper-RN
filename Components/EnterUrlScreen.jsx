@@ -20,10 +20,15 @@ const EnterUrlScreen = ({ onChangeTextUrl, setUrlConfirmed, url }) => {
         <View style={styles.logoContainer}>
           <Image source={require("../img/minifyme-logo.png")} style={styles.logo} />
         </View>
-        <Form onChangeTextUrl={onChangeTextUrl} />
+        <Form onChangeHandler={onChangeTextUrl} />
         <View style={styles.btnContainer}>
           <Text>{url}</Text>
-          <MyButton style={{ width: "50%" }} handlePress={setUrlConfirmed} title="ADD" />
+          <MyButton
+            style={{ width: "50%" }}
+            handlePress={setUrlConfirmed}
+            handlePressParam={true}
+            title="ADD"
+          />
         </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>
