@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { StyleSheet, View, Keyboard, TouchableWithoutFeedback } from "react-native"
 import EnterUrlScreen from "./Components/EnterUrlScreen"
 import AddTimestampScreen from "./Components/AddTimestampScreen"
+import StampedURL from "./Components/StampedURL"
 
 export default function App() {
   const [url, setUrl] = useState("")
@@ -33,9 +34,9 @@ export default function App() {
           onChangeTextUrl={onChangeTextUrl}
           confirmUrl={confirmUrl}
           setUrlConfirmed={setUrlConfirmed}
-          url={url}
         />
         <AddTimestampScreen />
+        <StampedURL url={url} />
       </React.Fragment>
     )
   }
