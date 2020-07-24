@@ -1,13 +1,30 @@
 import React from "react"
-import { StyleSheet, SafeAreaView, Keyboard, TouchableWithoutFeedback, Text } from "react-native"
+import {
+  StyleSheet,
+  SafeAreaView,
+  Keyboard,
+  TouchableWithoutFeedback,
+  Text,
+  TextInput,
+  View,
+} from "react-native"
 import NumberInput from "./NumberInput"
 
-const AddTimestampScreen = () => {
+const AddTimestampScreen = ({ setTitle }) => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView style={styles.container}>
-        <Text style={styles.label}>Add a timestamp:</Text>
-        <NumberInput />
+        <View style={styles.inputContainer}>
+          <Text style={styles.label}>Add a timestamp:</Text>
+          <TextInput
+            style={styles.input}
+            placeholder=" Timestamp title (optional)"
+            onChangeText={val => setTitle(val)}
+          />
+        </View>
+        <NumberInput onChangeHandler={"someONCHANGE function"} unit="Hours" />
+        <NumberInput onChangeHandler={"someONCHANGE function"} unit="Minutes" />
+        <NumberInput onChangeHandler={"someONCHANGE function"} unit="Seconds" />
       </SafeAreaView>
     </TouchableWithoutFeedback>
   )
@@ -34,5 +51,20 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     alignSelf: "center",
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "black",
+    borderRadius: 5,
+    padding: 7,
+    fontSize: 18,
+  },
+  inputContainer: {
+    alignSelf: "center",
+    width: "90%",
+  },
+  label: {
+    fontSize: 18,
+    marginBottom: 10,
   },
 })
