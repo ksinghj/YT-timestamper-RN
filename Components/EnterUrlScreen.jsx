@@ -12,7 +12,7 @@ import {
 import Form from "./Form"
 import MyButton from "./MyButton"
 
-const EnterUrlScreen = ({ onChangeTextUrl, setUrlConfirmed, url }) => {
+const EnterUrlScreen = ({ onChangeTextUrl, url, setUrlConfirmed }) => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView style={styles.container}>
@@ -22,7 +22,6 @@ const EnterUrlScreen = ({ onChangeTextUrl, setUrlConfirmed, url }) => {
         </View>
         <Form onChangeHandler={onChangeTextUrl} />
         <View style={styles.btnContainer}>
-          <Text>{url}</Text>
           <MyButton
             style={{ width: "50%" }}
             handlePress={setUrlConfirmed}
@@ -40,8 +39,7 @@ export default EnterUrlScreen
 const styles = StyleSheet.create({
   container: {
     textAlign: "left",
-    marginTop: 80,
-    flex: 1,
+    marginTop: 5,
   },
   logoContainer: {
     alignItems: "center",
@@ -53,7 +51,7 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   btnContainer: {
-    flex: 1,
+    marginTop: 20,
     flexDirection: "column",
     alignSelf: "center",
   },

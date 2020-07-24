@@ -18,7 +18,6 @@ export default MyButton
 const styles = StyleSheet.create({
   btnContainer: {
     color: "white",
-    padding: 30,
     borderRadius: 5,
     maxWidth: "50%",
     alignSelf: "center",

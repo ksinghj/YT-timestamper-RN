@@ -1,6 +1,6 @@
-import { StatusBar } from "expo-status-bar"
+// import { StatusBar } from "expo-status-bar"
 import React, { useState } from "react"
-import { StyleSheet, Text, View, Keyboard, TouchableWithoutFeedback } from "react-native"
+import { StyleSheet, View, Keyboard, TouchableWithoutFeedback } from "react-native"
 import EnterUrlScreen from "./Components/EnterUrlScreen"
 import AddTimestampScreen from "./Components/AddTimestampScreen"
 

@@ -1,15 +1,16 @@
 import React from "react"
-import { StyleSheet, View } from "react-native"
+import { StyleSheet, View, Text } from "react-native"
 import NumericInput from "react-native-numeric-input"
 
-const NumberInput = ({ onChangeHandler }) => (
-  <View>
+const NumberInput = ({ onChangeHandler, unit }) => (
+  <View style={styles.container}>
     <NumericInput
       type="up-down"
       onChange={value => console.log(value)}
       minValue={0}
       maxValue={60}
     />
+    <Text style={styles.label}>{unit}</Text>
   </View>
 )
 
@@ -19,5 +20,8 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 18,
     marginBottom: 10,
+  },
+  container: {
+    flexDirection: "row",
   },
 })
