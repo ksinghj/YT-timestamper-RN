@@ -1,6 +1,6 @@
 // import { StatusBar } from "expo-status-bar"
 import React, { useState } from "react"
-import { StyleSheet, View, Keyboard, TouchableWithoutFeedback } from "react-native"
+import { StyleSheet, ScrollView, Keyboard, TouchableWithoutFeedback } from "react-native"
 import EnterUrlScreen from "./Components/EnterUrlScreen"
 import AddTimestampScreen from "./Components/AddTimestampScreen"
 import StampedURL from "./Components/StampedURL"
@@ -8,6 +8,7 @@ import StampedURL from "./Components/StampedURL"
 export default function App() {
   const [url, setUrl] = useState("")
   const [urlConfirmed, setUrlConfirmed] = useState(false)
+  const [title, setTitle] = useState("")
 
   const onChangeTextUrl = inputText => {
     setUrl(inputText)
@@ -35,15 +36,15 @@ export default function App() {
           confirmUrl={confirmUrl}
           setUrlConfirmed={setUrlConfirmed}
         />
-        <AddTimestampScreen />
-        <StampedURL url={url} />
+        <AddTimestampScreen setTitle={setTitle} />
+        <StampedURL title={title} url={url} />
       </React.Fragment>
     )
   }
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <View style={styles.container}>{content}</View>
+      <ScrollView style={styles.container}>{content}</ScrollView>
     </TouchableWithoutFeedback>
   )
 }

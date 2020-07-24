@@ -2,7 +2,6 @@ import { StatusBar } from "expo-status-bar"
 import React from "react"
 import {
   StyleSheet,
-  Text,
   View,
   Image,
   SafeAreaView,
@@ -12,7 +11,7 @@ import {
 import Form from "./Form"
 import MyButton from "./MyButton"
 
-const EnterUrlScreen = ({ onChangeTextUrl, url, setUrlConfirmed }) => {
+const EnterUrlScreen = ({ onChangeTextUrl, setUrlConfirmed }) => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView style={styles.container}>

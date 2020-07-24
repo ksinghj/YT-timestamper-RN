@@ -10,17 +10,21 @@ import {
 } from "react-native"
 import NumberInput from "./NumberInput"
 
-const AddTimestampScreen = () => {
+const AddTimestampScreen = ({ setTitle }) => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView style={styles.container}>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Add a timestamp:</Text>
-          <TextInput style={styles.input} placeholder="They talk about Joe's past" />
+          <TextInput
+            style={styles.input}
+            placeholder=" Timestamp title (optional)"
+            onChangeText={val => setTitle(val)}
+          />
         </View>
-        <NumberInput unit="Hours" />
-        <NumberInput unit="Minutes" />
-        <NumberInput unit="Seconds" />
+        <NumberInput onChangeHandler={"someONCHANGE function"} unit="Hours" />
+        <NumberInput onChangeHandler={"someONCHANGE function"} unit="Minutes" />
+        <NumberInput onChangeHandler={"someONCHANGE function"} unit="Seconds" />
       </SafeAreaView>
     </TouchableWithoutFeedback>
   )
