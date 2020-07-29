@@ -9,7 +9,7 @@ const Form = ({ onChangeHandler }) => (
   </View>
 )
 
-// TODO: when input pressed setUrlConfirmed(false) to hide add timestamp screen
+// TODO: when input pressed setUrlConfirmed(false) to hide add timestamp screen (toggle conditional render)
 
 export default Form
 

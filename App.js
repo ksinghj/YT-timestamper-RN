@@ -10,12 +10,29 @@ export default function App() {
   const [urlConfirmed, setUrlConfirmed] = useState(false)
   const [title, setTitle] = useState("")
 
+  const [hours, setHours] = useState(0)
+  const [minutes, setMinutes] = useState(0)
+  const [seconds, setSeconds] = useState(0)
+
   const onChangeTextUrl = inputText => {
     setUrl(inputText)
   }
 
   const confirmUrl = () => {
     setUrlConfirmed(url)
+  }
+
+  const onHourChange = hours => {
+    console.log("onHourChange hours:", hours)
+    setHours(hours)
+  }
+  const onMinutesChange = minutes => {
+    console.log("onMinutesChange hours:", minutes)
+    setMinutes(minutes)
+  }
+  const onSecondsChange = seconds => {
+    console.log("onSecondsChange seconds:", seconds)
+    setSeconds(seconds)
   }
 
   let content
@@ -36,13 +53,19 @@ export default function App() {
           confirmUrl={confirmUrl}
           setUrlConfirmed={setUrlConfirmed}
         />
-        <AddTimestampScreen setTitle={setTitle} />
-        <StampedURL title={title} url={url} />
+        <AddTimestampScreen
+          setTitle={setTitle}
+          onHourChange={onHourChange}
+          onMinutesChange={onMinutesChange}
+          onSecondsChange={onSecondsChange}
+        />
+        <StampedURL title={title} url={url} hours={hours} minutes={minutes} seconds={seconds} />
       </React.Fragment>
     )
   }
 
   return (
+    // TODO: TouchableWithoutFeedback causing user to press button twice to add url, not good UX
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <ScrollView style={styles.container}>{content}</ScrollView>
     </TouchableWithoutFeedback>
