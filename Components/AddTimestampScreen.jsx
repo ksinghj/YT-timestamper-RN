@@ -10,7 +10,7 @@ import {
 } from "react-native"
 import NumberInput from "./NumberInput"
 
-const AddTimestampScreen = ({ setTitle }) => {
+const AddTimestampScreen = ({ setTitle, onHourChange, onMinutesChange, onSecondsChange }) => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView style={styles.container}>
@@ -22,9 +22,9 @@ const AddTimestampScreen = ({ setTitle }) => {
             onChangeText={val => setTitle(val)}
           />
         </View>
-        <NumberInput onChangeHandler={"someONCHANGE function"} unit="Hours" />
-        <NumberInput onChangeHandler={"someONCHANGE function"} unit="Minutes" />
-        <NumberInput onChangeHandler={"someONCHANGE function"} unit="Seconds" />
+        <NumberInput data-function="hours" onChangeHandler={onHourChange} unit="Hours" />
+        <NumberInput data-function="minutes" onChangeHandler={onMinutesChange} unit="Minutes" />
+        <NumberInput data-function="seconds" onChangeHandler={onSecondsChange} unit="Seconds" />
       </SafeAreaView>
     </TouchableWithoutFeedback>
   )

@@ -6,7 +6,7 @@ const NumberInput = ({ onChangeHandler, unit }) => (
   <View style={styles.container}>
     <NumericInput
       type="up-down"
-      onChange={value => console.log(value)}
+      onChange={val => onChangeHandler(val)}
       minValue={0}
       maxValue={60}
     />
