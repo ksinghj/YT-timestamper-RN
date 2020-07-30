@@ -11,6 +11,8 @@ import {
 import Form from "./Form"
 import MyButton from "./MyButton"
 
+// TODO: remove spaces fromo url!!
+// TODO: refactor to class component to use scrollto
 const EnterUrlScreen = ({ onChangeTextUrl, setUrlConfirmed }) => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>

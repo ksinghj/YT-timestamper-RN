@@ -17,11 +17,13 @@ const NumberInput = ({ onChangeHandler, unit }) => (
 export default NumberInput
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+  },
   label: {
     fontSize: 18,
     marginBottom: 10,
-  },
-  container: {
-    flexDirection: "row",
+    alignSelf: "center",
+    marginLeft: 10,
   },
 })
