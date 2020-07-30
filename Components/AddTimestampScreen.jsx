@@ -43,7 +43,7 @@ export default AddTimestampScreen
 const styles = StyleSheet.create({
   container: {
     textAlign: "left",
-    marginTop: 80,
+    marginTop: 30,
     flex: 1,
   },
   logoContainer: {
