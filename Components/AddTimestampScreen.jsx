@@ -22,9 +22,17 @@ const AddTimestampScreen = ({ setTitle, onHourChange, onMinutesChange, onSeconds
             onChangeText={val => setTitle(val)}
           />
         </View>
-        <NumberInput data-function="hours" onChangeHandler={onHourChange} unit="Hours" />
-        <NumberInput data-function="minutes" onChangeHandler={onMinutesChange} unit="Minutes" />
-        <NumberInput data-function="seconds" onChangeHandler={onSecondsChange} unit="Seconds" />
+        <View style={styles.numpads}>
+          <View style={styles.numpad}>
+            <NumberInput data-function="hours" onChangeHandler={onHourChange} unit="Hours" />
+          </View>
+          <View style={styles.numpad}>
+            <NumberInput data-function="minutes" onChangeHandler={onMinutesChange} unit="Minutes" />
+          </View>
+          <View style={styles.numpad}>
+            <NumberInput data-function="seconds" onChangeHandler={onSecondsChange} unit="Seconds" />
+          </View>
+        </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>
   )
@@ -35,7 +43,7 @@ export default AddTimestampScreen
 const styles = StyleSheet.create({
   container: {
     textAlign: "left",
-    marginTop: 80,
+    marginTop: 30,
     flex: 1,
   },
   logoContainer: {
@@ -66,5 +74,12 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 18,
     marginBottom: 10,
+  },
+  numpads: {
+    marginLeft: 20,
+    marginTop: 20,
+  },
+  numpad: {
+    marginTop: 10,
   },
 })
